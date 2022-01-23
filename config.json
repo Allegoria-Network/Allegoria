@@ -1,0 +1,22 @@
+{
+    "bot": {
+        "token": "OTAxNDY2OTIyODIwOTg4OTY4.YXQSfg.rzvbrR5gNEYMYkmE-FpMG2WActA",
+        "ownersIDs": ["772850214318768138", "688402229245509844"]
+    },
+    "mainLang": "fr",
+    "testGuild": "782661233622515772",
+    "database": {
+        "mongoURL": "mongodb+srv://pauldb09:jamesb001@daltie.ifwuu.mongodb.net/daltie?retryWrites=true&w=majority",
+        "options": {
+            "useNewUrlParser": true,
+            "useUnifiedTopology": true,
+            "useCreateIndex": true,
+            "useFindAndModify": false,
+            "autoIndex": false,
+            "maxPoolSize": 90,
+            "serverSelectionTimeoutMS": 5000,
+            "socketTimeoutMS": 45000,
+            "family": 4
+        }
+    }
+}

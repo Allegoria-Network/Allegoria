@@ -1,0 +1,9 @@
+{
+    "items": [
+        { "id": 1, "price_gold": 0, "price_wood": 15, "name": "Wooden Sword", "description": "It is fragile, don't break it!", "damage": 8, "end_time": 8, "category": "Swords" },
+        { "id": 2, "price_gold": 50, "price_wood": 0, "name": "Bronze Sword", "description": "It can be a good sword", "damage": 15, "end_time": 14, "category": "Swords" },
+        { "id": 3, "price_gold": 0, "price_wood": 10, "name": "Wooden Shield", "description": "It is fragile, don't break it!", "damage": 0, "protection": 15, "end_time": 8, "category": "Shields" },
+        { "id": 4, "price_gold": 20, "price_wood": 0, "name": "Bronze Shield", "description": "It can be a good shield", "damage": 2, "protection": 30, "end_time": 14, "category": "Shields" }
+    ],
+    "categories": ["Swords", "Shields"]
+}
