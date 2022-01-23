@@ -224,7 +224,7 @@ class Help extends Command {
         const momentDate = moment(userDB.join_date);
         const discordDate = `<t:${momentDate.unix()}:D>`;
     const isPremium= `${userDB.premium?"<:check:847244236277678080>":"<:reject:929356899336486942>"}`;
-   const lastDate= userDB.lastRedeems? userDB.lastRedeems.find(c=>c.name ==="daily") ? userDB.lastRedeems.find(c=>c.name ==="daily").date :null :null;
+   const lastDate= userDB.lastRedeems? userDB.lastRedeems.daily ?userDB.lastRedeems.daily :null :null;
    let d  =moment(lastDate)
    const redeemDate = `<t:${d.unix()}:D>`;
    let  userClan

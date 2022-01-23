@@ -17,8 +17,8 @@ class Help extends Command {
 
     async run(ctx, userDB) {
         const lastRedeem = userDB.cooldowns.daily ? userDB.cooldowns.daily : 0
-        if (Date.now() >= lastRedeem + (1000 * 60 * 60 * 24)) {
-            const pay = Math.floor(Math.random() * 90).toFixed(0)
+        if (Date.now() >= lastRedeem + (1000 * 60 * 60 * 12)) {
+            const pay = Math.floor(Math.random() * 40).toFixed(0)
             const final = ctx.substractChar(userDB, pay).number
             const changed = ctx.substractChar(userDB, pay).sign
             if (userDB.daily === undefined) {
@@ -39,7 +39,7 @@ class Help extends Command {
             }
             userDB.save()
         } else {
-            const d = moment(lastRedeem + (1000 * 60 * 60 * 24));
+            const d = moment(lastRedeem + (1000 * 60 * 60 * 12));
             const discordDate = `<t:${d.unix()}:R>`;
             return ctx.errorMessage("You've already redeemed your daily. Please come back in " + discordDate + "")
         }
