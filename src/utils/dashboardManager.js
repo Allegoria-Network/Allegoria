@@ -4,9 +4,12 @@ class ApiManager {
         this._client = client;
     }
 
-    async launch(id, data) {
-        if (this.client.shard.ids[0] == 0) {
-            cos
+    async launch(options = {}) {
+        if (this._client.shard.ids[0] == 0) {
+            if (this._client.dashboardReady) return this._client.logger.error("[Dashboard] Already spawned")
+            const dash = require("../dashboard/app")
+            console.log(options)
+            await dash.load(this._client, options)
         }
     }
 }

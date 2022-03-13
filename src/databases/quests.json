@@ -1,11 +1,69 @@
 [{
-        "name": "",
-        "requiredCoins": "",
-        "requiredLevel": ""
+        "name": "Join your first clan.",
+        "hasJoinedClan": true,
+        "rewardCoins": 20
+    },
+
+    {
+        "name": "Give gold to a clan",
+        "hasDonatedGold": true,
+        "rewardCoins": 5
+
     },
     {
-        "name": "",
-        "requiredCoins": "",
-        "requiredLevel": ""
+        "name": "Give wood to a clan",
+        "hasDonatedWood": true,
+        "rewardCoins": 5
+
+    },
+    {
+        "name": "Claim 1 Daily",
+        "dailyCount": 1,
+        "rewardCoins": 5
+    },
+    {
+        "name": "Claim 10 Dailies",
+        "dailyCount": 10,
+        "rewardCoins": 40
+    },
+    {
+        "name": "Claim 50 Dailies",
+        "dailyCount": 50,
+        "rewardCoins": 150
+    },
+    {
+        "name": "Claim 150 Dailies",
+        "dailyCount": 50,
+        "rewardCoins": 450
+    },
+    {
+        "name": "Claim 1 Mine",
+        "mineCount": 1,
+        "rewardCoins": 5
+    },
+    {
+        "name": "Claim 10 Mines",
+        "mineCount": 10,
+        "rewardCoins": 20
+    },
+    {
+        "name": "Claim 150 Mines",
+        "mineCount": 150,
+        "rewardCoins": 200
+    },
+    {
+        "name": "Claim 1 Fish",
+        "mineCount": 1,
+        "rewardCoins": 5
+    },
+    {
+        "name": "Claim 10 Fish",
+        "mineCount": 10,
+        "rewardCoins": 20
+    },
+    {
+        "name": "Claim 150 Fish",
+        "mineCount": 150,
+        "rewardCoins": 200
     }
 ]

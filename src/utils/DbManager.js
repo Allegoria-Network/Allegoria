@@ -4,6 +4,7 @@ const guildData = require("../models/guildData");
 const userSchema = require("../models/userSchema");
 const errorModel = require("../models/errorModel");
 const clanSchema = require("../models/clanSchema")
+const users_waiting_battle = []
 class DbManager {
     constructor(client) {
         this._client = client;
@@ -24,6 +25,30 @@ class DbManager {
         }
         return randomstring
     };
+    AddWaitingList(userID) {
+        if (!users_waiting_battle.includes(userID)) {
+            users_waiting_battle.push(userID)
+        } else throw new Error("[AddWaitingList] User is already in waiting list")
+        return true;
+    }
+    RemoveWaitingList(userID) {
+        const index = users_waiting_battle.indexOf(userID);
+        if (index > -1) users_waiting_battle.splice(index, 1);
+        return true;
+    }
+    checkWaiting(userID) {
+        if (users_waiting_battle.includes(userID)) return true
+        else return false
+    }
+    findAdversary(userID) {
+        const removed = users_waiting_battle.filter(x => x !== userID)
+        if (removed.length == 0) return false
+        else {
+            const index = users_waiting_battle.indexOf(removed[0]);
+            if (index > -1) users_waiting_battle.splice(index, 1);
+            return removed[0]
+        }
+    }
     async getClan(clanID) {
         let data = await clanSchema.findOne({ clanID: clanID })
         if (!data) {
@@ -73,6 +98,7 @@ class DbManager {
                 daily: null,
                 mine: null,
             },
+            completed_quests: [],
             nextLvlCoins: 150,
             lastRedeems: {
                 daily: null,
@@ -90,7 +116,14 @@ class DbManager {
         let data = await userSchema.findOne({ userID: memberID })
         return data;
     }
-
+    async markQuestCompleted(userDB, questName, save, ctx, reward = {}) {
+        if (!userDB) return this._client.logger.error("Please provide userDB")
+        if (save == true) {
+            userDB.completed_quests.push({ name: questName, date: Date.now() })
+            userDB.save()
+        }
+        ctx.channel.send(`**<:writing:948271792747855873> New quest unlocked**\n\n**<:mineria:938500817294590002> Mineria**: Congrats **${ctx.author.username}** you have just completed your ${(userDB.completed_quests.length+1)}${(userDB.completed_quests.length+1) ==0?"st":(userDB.completed_quests.length+1) ==2?"nd":"th"} quest: **${questName}**\n\n__Your reward__: **${reward} <:coins:935949762690179133>**`)
+    }
     async registerError(code, error) {
         new errorModel({
             code: code,

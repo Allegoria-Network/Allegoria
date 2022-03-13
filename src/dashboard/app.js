@@ -2,33 +2,31 @@ morgan = require("morgan");
 const passport = require('passport');
 const { Strategy } = require('passport-discord');
 
-module.exports.load = async(client) => {
-
-    /* Init express app */
+module.exports.load = async(client, config = {}) => {
+    console.log(config)
     const express = require("express"),
         session = require("express-session"),
         path = require("path"),
         app = express();
+    const indexRoute = require("./routes/index")
+    const CommandRoute = require("./routes/commands")
+    const InviteRoute = require("./routes/invite")
+    const Invalid = require("./routes/404")
+    const getStarted = require("./routes/getstarted")
+    const AuthRoute = require("./routes/auth")
+    const ProfileRoute = require("./routes/profile")
+    const ClanRoute = require("./routes/clan")
+    const discordRouter = require("./routes/discord")
 
-    /* Routers */
-    const a = require("./routes/index")
-        /* App configuration */
-    app
-        .use(morgan('dev'))
-
-    // Set the engine to html (for ejs template)
-    .engine("html", require("ejs").renderFile)
+    app.use(morgan('dev'))
+        .engine("html", require("ejs").renderFile)
         .set("view engine", "ejs")
-        // Set the css and js folder to ./public
         .use(express.static(path.join(__dirname, "/public")))
-        // Set the ejs templates to ./views
         .set("views", path.join(__dirname, "/views"))
-        // Set the dashboard port
-        .set("port", 80)
-        // Set the express session password and configuratio
+        .set("port", config.port)
 
     .use(session({
-            secret: `ey.${Date.now()}$AZza${Date.now()}`,
+            secret: `allegoria.me_${Date.now()}_pauldb09_own_${Date.now()}`,
             resave: false,
             saveUninitialized: false
         }))
@@ -41,12 +39,19 @@ module.exports.load = async(client) => {
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
             res.setHeader('Access-Control-Allow-Credentials', true);
-            req.config = this.config;
+            req.config = client.config;
             req.bot = client;
             next();
         })
-        .use("/", new a.Router())
-
+        .use("/", new indexRoute.Router())
+        .use("/commands", new CommandRoute.Router())
+        .use("/invite", new InviteRoute.Router())
+        .use("/getstarted", new getStarted.Router())
+        .use("/auth", new AuthRoute.Router())
+        .use("/profile", new ProfileRoute.Router())
+        .use("/c", new ClanRoute.Router())
+        .use("/discord", new discordRouter.Router())
+        .use("*", new Invalid.Router());
     passport.serializeUser((user, done) => {
         done(null, user);
     });
@@ -54,18 +59,17 @@ module.exports.load = async(client) => {
         done(null, obj);
     });
     passport.use(new Strategy({
-        clientID: "783708073390112830",
-        clientSecret: "OLfh_1WGdospojspkqf_XueF5_VmdTg3",
-        callbackURL: `https://allegoria.me/api/login`,
-        scope: ['identify', 'guilds']
+        clientID: "850080680578383872",
+        clientSecret: "Secret",
+        callbackURL: "https://allegoria.me/auth/login",
+        scope: ['identify']
     }, (accessToken, refreshToken, profile, done) => {
         process.nextTick(function() {
             return done(null, profile);
         });
     }));
-    // Listen
-    app.listen(app.get("port"), () => {
-        console.log("Allegoria dashboard is listening on port " + app.get("port"));
+    app.listen(config.port, () => {
+        console.log("Allegoria dashboard is listening on port " + config.port);
     });
     client.dashboardReady = true;
 };

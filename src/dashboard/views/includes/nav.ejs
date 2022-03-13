@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <img src="https://cdn.discordapp.com/avatars/850080680578383872/c672007f89ad62c8a96433445ea07df8.png" style="border-radius: 50%;height: 40px;"><a class="navbar-brand" href="/" style="color: aliceblue;">Allegoria</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/commands" st>Commands</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clans">Clans</a></li>
+                <li class="nav-item"><a class="nav-link" href="/discord">Support server</a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="/vote">Vote</a></li>
+                <% if(is_logged){%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/discord" style="font-size: 1rem !important;">
+                            <%= (is_logged ? `${user.username}` : 'Se connecter') %> <img src="<%= UserAvatar %>" height="40px" width="40px" style=" border-radius: 50%;">
+                        </a>
+                    </li>
+                    <%}%>
+                        <% if(is_logged==false){%>
+                            <li class="nav-item"> <a _ngcontent-uha-c44="" routerlink="/landings/multipurpose" style="height: 32px;
+                    font-size: 1.2rem;
+                    font-family: proxima-nova, sans-serif;
+box-sizing: border-box;
+cursor: pointer;
+position: relative;
+user-select: none;
+padding-inline-end: 25px;
+padding-inline-start: 25px;
+min-height: 21px;
+font-size: 16px;
+line-height: 21px;
+color: fff;
+border-radius: 12px;
+transition: background-color 0.15s ease-out 0s, color, opacity, border;
+outline: none;
+text-decoration: none;
+background: #ebb784;
+border-width: initial;
+border-style: none;
+border-color: initial;
+border-image: initial;" class="btn btn-lg btn-primary fw-500 me-3" href="/auth/login">Login</a></li>
+                            <%}%>
+            </ul>
+        </div>
+    </div>
+</nav>

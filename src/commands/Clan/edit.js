@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-edit',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Edits a clan. You must be admin of the clan',
             options: [{
                     type: "STRING",
@@ -79,7 +79,7 @@ class Help extends Command {
         clan.min_level = clan_min_level
         clan.entry_price = entry_price
         clan.save()
-        return ctx.successMessage(`The informations of [${clanName}](https://allego.me/clan/${clan.clanID}) has been successfully`)
+        return ctx.successMessage(`The informations of [${clanName}](https://allegoria.me/clan/${clan.clanID}) has been successfully`)
 
     }
 }

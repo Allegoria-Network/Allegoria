@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-admin',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Adds/remove an admin from the clan',
             options: [{
                     type: "USER",
@@ -37,21 +37,21 @@ class Help extends Command {
         if (!remove && !add) return ctx.errorMessage("Please provide a member to add or to remove")
         if (remove) {
             if (!clan.members.includes(`${remove.id}`)) return ctx.errorMessage(`**${remove.username}** is not a member of **${clan.clanName}** so you can't remove him as admin.`)
-            if (!clan.admins.includes(`${remove.id}`)) return ctx.errorMessage(`**${remove.username}** is not already admin of of [${clan.clanName}](https://allego.me/clan/${clan.clanID})`)
+            if (!clan.admins.includes(`${remove.id}`)) return ctx.errorMessage(`**${remove.username}** is not already admin of of [${clan.clanName}](https://allegoria.me/clan/${clan.clanID})`)
             const index = clan.admins.indexOf(remove.id);
             if (index > -1) {
                 clan.admins.splice(index, 1);
             }
             clan.save()
-            ctx.successMessage(`**${remove.username}** is no longer an admin of [${clan.clanName}](https://allego.me/clan/${clan.clanID})`)
+            ctx.successMessage(`**${remove.username}** is no longer an admin of [${clan.clanName}](https://allegoria.me/clan/${clan.clanID})`)
         } else {
             if (!clan.members.includes(`${add.id}`)) return ctx.errorMessage(`**${add.username}** is not a member of **${clan.clanName}** so you can't add him as admin.`)
-            if (clan.admins.includes(`${add.id}`)) return ctx.errorMessage(`**${add.username}** is already admin of of [${clan.clanName}](https://allego.me/clan/${clan.clanID})`)
+            if (clan.admins.includes(`${add.id}`)) return ctx.errorMessage(`**${add.username}** is already admin of of [${clan.clanName}](https://allegoria.me/clan/${clan.clanID})`)
             clan.admins.push(`${add.id}`)
             clan.save()
-            ctx.successMessage(`**${add.username}** is no longer an admin of [${clan.clanName}](https://allego.me/clan/${clan.clanID})`)
+            ctx.successMessage(`**${add.username}** is no longer an admin of [${clan.clanName}](https://allegoria.me/clan/${clan.clanID})`)
         }
-        return ctx.successMessage(`The informations of [${clanName}](https://allego.me/clan/${clan.clanID}) has been successfully`)
+        return ctx.successMessage(`The informations of [${clanName}](https://allegoria.me/clan/${clan.clanID}) has been successfully`)
 
     }
 }

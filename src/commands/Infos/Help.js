@@ -6,7 +6,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'help',
-            category: '<:infos:929660747859001344> Infos',
+            category: '<:info:948273758156783646> Infos',
             description: 'Display all the commands of the bot',
             options: [{
                 type: "STRING",
@@ -65,9 +65,9 @@ class Help extends Command {
                     };
                 }),
                 color: "#efaa66",
-                author: { name: "Help Command", icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
+                author: { name: "Help Command", icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
                 footer: { text: `Do /help <command> for more informations about a command!`, icon_url: ctx.client.user.displayAvatarURL({ size: 512, format: "png" }) },
-                description: "Hello! Here is the list of my commands!\nI only support Slash commands so press / to use one of my commands!\nNeed help? Come on on our [Guild](https://discord.gg/6wa4U5sAMe)",
+                description: "• Hello! I only support Slash commands so press / to use one of my commands!\n • Need help with the bot? Come on on our [Guild](https://discord.gg/r8fVHdh5TD)\n• Purchasing a [Premium membership](https://allegoria.me/premium) is a great way to get a boost ahead!",
             }]
         })
 

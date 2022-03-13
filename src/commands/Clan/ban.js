@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-ban',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Bans a member from a clan',
             options: [{
                     type: "USER",
@@ -38,7 +38,7 @@ class Help extends Command {
         clan.save()
         userinDB.clan = null;
         userinDB.save()
-        ctx.successMessage(`${user} is no longer a member of [${clan.clanName}](https://allego.me/clan/${clan.clanID}) and can't join this clan anymore.`)
+        ctx.successMessage(`${user} is no longer a member of [${clan.clanName}](https://allegoria.me/clan/${clan.clanID}) and can't join this clan anymore.`)
 
 
     }

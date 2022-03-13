@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Allegoria - The best discord rpg bot!</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <meta name="description" content="Start now an incredible adventure with your friends in discord! Earn money, fight yourself, marry yourself and more!">
+    <meta name="keywords" content="admin, bot, dashboard, Allegoria, website, discord, discordapp, discord music bot">
+    <title>Green-bot - The perfect discord music bot!</title>
+    <meta name="theme-color" content="#efaa66">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property=og:image content="/assets/img/favicon.png">
+    <meta property="og:title" content="Allegoria - The best discord rpg bot!">
+    <meta property="og:description" content="Start now an incredible adventure with your friends in discord! Earn money, fight yourself, marry yourself and more!">
+    <meta property="og:url" content="https://allegoria.me">
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:title" content="Allegoria - The best discord rpg bot!">
+    <meta name="twitter:description" content="Start now an incredible adventure with your friends in discord! Earn money, fight yourself, marry yourself and more!">
+
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <img src="https://cdn.discordapp.com/avatars/850080680578383872/c672007f89ad62c8a96433445ea07df8.png" style="border-radius: 50%;height: 40px;"><a class="navbar-brand" href="/" style="color: aliceblue;">Allegoria</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/commands" st>Commands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/clans">Clans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/discord">Support server</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="/vote">Vote</a></li>
+                    <% if(is_logged){%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/discord" style="font-size: 1rem !important;">
+                                <%= (is_logged ? `${user.username}` : 'Se connecter') %> <img src="<%= UserAvatar %>" height="40px" width="40px" style=" border-radius: 50%;">
+                            </a>
+                        </li>
+                        <%}%>
+                            <% if(is_logged==false){%>
+                                <li class="nav-item"> <a _ngcontent-uha-c44="" routerlink="/landings/multipurpose" style="height: 32px;
+                        font-size: 1.2rem;
+                        font-family: proxima-nova, sans-serif;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    padding-inline-end: 25px;
+    padding-inline-start: 25px;
+    min-height: 21px;
+    font-size: 16px;
+    line-height: 21px;
+    color: fff;
+    border-radius: 12px;
+    transition: background-color 0.15s ease-out 0s, color, opacity, border;
+    outline: none;
+    text-decoration: none;
+    background: #ebb784;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;" class="btn btn-lg btn-primary fw-500 me-3" href="/auth/login">Login</a></li>
+                                <%}%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold" style="font-size: 2.5rem !important;">Games are always better with friends!</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Start now an incredible adventure with your friends in discord! Earn money, fight yourself, marry yourself and more!</p>
+                    <a class="btn btn-light btn-xl" href="/invite">Add to discord!</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="page-section bg-primary" id="eabout" style="background-color:  #2a2c30!important;">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">We've got what you were looking for!</h2>
+                    <hr class="divider divider-light" />
+                    <p class="text-white-75 mb-4">Start THE adventure of your life on... Discord! Interact with your friends and make new friends! this bot is for you!</p>
+                    <a class="btn btn-light btn-xl" href="/invite">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services-->
+    <section class="page-section" id="services" style="background-color: #36393f!important">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0" style="color: aliceblue;">Features</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2" style="color: aliceblue;">Clans</h3>
+                        <p class="text-muted mb-0">Join a clan and integrate a community! Join wars with your clan!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2" style="color: aliceblue;">Not addictive</h3>
+                        <p class="text-muted mb-0">Don't worry, you won't be addict to allegoria :).</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2" style="color: aliceblue;"><i class="bi-globe fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2" style="color: aliceblue;">Connect with thousands of users</h3>
+                        <p class="text-muted mb-0">You'll be able to connect with thousands of users!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5" style="color: aliceblue;">
+                        <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Made with Love</h3>
+                        <p class="text-muted mb-0">Made with love for YOU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio-->
+
+    <!-- Call to action-->
+    <section class="page-section bg-dark text-white" style="background-color:  #2a2c30!important;">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4" style="font-size: 1.6rem !important;">Uh! You're still there? What are you waiting for?</h2>
+            <a class="btn btn-light btn-xl" href="/invite">Add to discord!</a>
+        </div>
+    </section>
+    <!-- Contact-->
+
+    <footer class="bg-light py-5" style="background-color: #36393f!important">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2022 - Allegoria Network, a service provided by <a href="https://green-bot.app">Green-bot Developement</a><br><br>
+                <h6>Useful links</h6><a href="/temrs">Terms of service</a> | <a href="/discord">Support server</a> | <a href="/appeals">Ban appeals</a>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

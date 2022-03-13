@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'create-clan',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Creates a clan. You must be level 5',
             options: [{
                     type: "STRING",
@@ -41,7 +41,7 @@ class Help extends Command {
     async run(ctx, userDB) {
         if (!userDB.done) return ctx.errorMessage("Calm down! You have to complete the configuration of your account! Do `/setup-profile`")
         if (userDB.clan) return ctx.errorMessage("You are already member of a clan. Please leave this one before creating a clan.")
-        if (5 > userDB.level) return ctx.errorMessage("Uh no! You must be at least level **5** to create a clan!\nWant to gain levels more quickly? Check our [Premium](https://allegoria-bot.app/premium)")
+        if (5 > userDB.level) return ctx.errorMessage("Uh no! You must be at least level **5** to create a clan!\nWant to gain levels more quickly? Check our [Premium](https://allegoria.me/premium)")
         if (userDB.hasBeenInAClan && userDB.hasBeenInAClan.date) {
             if (Date.now() >= userDB.hasBeenInAClan.date + (1000 * 60 * 60 * 24 * 7)) {} else {
                 const d = moment(userDB.hasBeenInAClan.date + (1000 * 60 * 60 * 24 * 7));
@@ -76,9 +76,9 @@ class Help extends Command {
         userDB.clan = clanId;
         if (!userDB.hasBeenInAClan) {
             userDB.hasBeenInAClan = { date: Date.now() }
-            ctx.reply(`**<:mineria:929416897311694858> Mineria**: Nice **${ctx.author}** you have created your first clan successfuly! Congrats!\n\nWhat can you do in a clan? When you join a clan, you can give resources to it and withdraw gold or wood with higher member's permission. Then, if they accept, you can get resources to buy items. You can also participate on a war <:swords:929356456275361792>\n\n<:clan:929660809880141874> Invite link of your clan: https://allego.me/c/${clanId}`)
+            ctx.reply(`**<:mineria:938500817294590002> Mineria**: Nice **${ctx.author}** you have created your first clan successfuly! Congrats!\n\nWhat can you do in a clan? When you join a clan, you can give resources to it and withdraw gold or wood with higher member's permission. Then, if they accept, you can get resources to buy items. You can also participate on a war <:swords:929356456275361792>\n\n<:clan:938506917674889257> Invite link of your clan: https://allegoria.me/c/${clanId}`)
         } else {
-            ctx.reply(`**<:mineria:929416897311694858> Mineria**: Nice **${ctx.author}** your clan **${clanName}** has been successfully created! \n<:clan:929660809880141874> Clan Id: ${clanId} \n\nTell to your friends to do \`/clan-join ${clanId}\` to join your clan or share this link: https://allego.me/c/${clanId}`)
+            ctx.reply(`**<:mineria:938500817294590002> Mineria**: Nice **${ctx.author}** your clan **${clanName}** has been successfully created! \n<:clan:938506917674889257> Clan Id: ${clanId} \n\nTell to your friends to do \`/clan-join ${clanId}\` to join your clan or share this link: https://allegoria.me/c/${clanId}`)
             userDB.hasBeenInAClan = { date: Date.now() }
         }
         userDB.save()

@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-leave',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Leaves your current clan. Note that you won\'t be able to join a clan for 7 days',
             options: [],
             example: [],
@@ -22,10 +22,10 @@ class Help extends Command {
         const d = moment(Date.now() + (1000 * 60 * 60 * 24 * 7));
         const discordDate = `<t:${d.unix()}:R>`;
         ctx.reply({
-            content: `**<:mineria:929416897311694858> Mineria**: You're going to leave **${clan.clanName}**. Note that all the coins, ressources etc you transfered to the clan will belong to the clan forever.\n\n<:infos:929660747859001344> You won't be abble to join another clan for a week. so you will be able to join another clan only in ${discordDate}.\nClick on the green button to confirm and the red button to abort..`,
+            content: `**<:mineria:938500817294590002> Mineria**: You're going to leave **${clan.clanName}**. Note that all the coins, ressources etc you transfered to the clan will belong to the clan forever.\n\n<:info:948273758156783646>You won't be abble to join another clan for a week. so you will be able to join another clan only in ${discordDate}.\nClick on the green button to confirm and the red button to abort..`,
             components: [{
-                components: [{ customId: "confirm", emoji: "<:check:847244236277678080>", label: "Confirm", style: 3, type: "BUTTON" },
-                    { customId: "cancel", emoji: "<:reject:929356899336486942>", label: "Cancel", style: 4, type: "BUTTON" }
+                components: [{ customId: "confirm", emoji: "<:success:938500833421697074>", label: "Confirm", style: 3, type: "BUTTON" },
+                    { customId: "cancel", emoji: "<:error:938500833258143774>", label: "Cancel", style: 4, type: "BUTTON" }
                 ],
                 type: 'ACTION_ROW'
             }, ]
@@ -36,10 +36,10 @@ class Help extends Command {
         collector.on('collect', inter => {
             if (inter.customId === "confirm") {
                 message_send.edit({
-                    content: `**<:mineria:929416897311694858> Mineria**: Well, all is done! You're no longer a member of **${clan.clanName}**`,
+                    content: `**<:mineria:938500817294590002> Mineria**: Well, all is done! You're no longer a member of **${clan.clanName}**`,
                     components: [{
-                        components: [{ customId: "confirm", emoji: "<:check:847244236277678080>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
-                            { customId: "cancel", emoji: "<:reject:929356899336486942>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
+                        components: [{ customId: "confirm", emoji: "<:success:938500833421697074>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
+                            { customId: "cancel", emoji: "<:error:938500833258143774>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
                         ],
                         type: 'ACTION_ROW'
                     }, ]
@@ -54,10 +54,10 @@ class Help extends Command {
                 userDB.save()
             } else {
                 message_send.edit({
-                    content: `**<:mineria:929416897311694858> Mineria**: The operation has been cancelled successfully. You are still a member of **${clan.clanName}**`,
+                    content: `**<:mineria:938500817294590002> Mineria**: The operation has been cancelled successfully. You are still a member of **${clan.clanName}**`,
                     components: [{
-                        components: [{ customId: "confirm", emoji: "<:check:847244236277678080>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
-                            { customId: "cancel", emoji: "<:reject:929356899336486942>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
+                        components: [{ customId: "confirm", emoji: "<:success:938500833421697074>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
+                            { customId: "cancel", emoji: "<:error:938500833258143774>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
                         ],
                         type: 'ACTION_ROW'
                     }, ]
@@ -70,10 +70,10 @@ class Help extends Command {
         collector.on('end', reason => {
             if (reason !== "time") return
             message_send.edit({
-                content: `**<:mineria:929416897311694858> Mineria**: The operation has been cancelled successfully. You are still a member of **${clan.clanName}**`,
+                content: `**<:mineria:938500817294590002> Mineria**: The operation has been cancelled successfully. You are still a member of **${clan.clanName}**`,
                 components: [{
-                    components: [{ customId: "confirm", emoji: "<:check:847244236277678080>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
-                        { customId: "cancel", emoji: "<:reject:929356899336486942>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
+                    components: [{ customId: "confirm", emoji: "<:success:938500833421697074>", label: "Confirm", disabled: true, style: 3, type: "BUTTON" },
+                        { customId: "cancel", emoji: "<:error:938500833258143774>", label: "Cancel", disabled: true, style: 4, type: "BUTTON" }
                     ],
                     type: 'ACTION_ROW'
                 }, ]

@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-donate',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Gives something from your profile to the clan',
             options: [{
                     type: "NUMBER",
@@ -33,6 +33,7 @@ class Help extends Command {
             const clan = await ctx.database.getClan(userDB.clan)
             const wood = ctx.args.getNumber("wood")
             const coins = ctx.args.getNumber("coins")
+            if (wood && wood <= 0 || coins && coins <= 0) return ctx.errorMessage("Please provide a valid number of wood or coinss.")
             if (!wood && !coins) return ctx.errorMessage("You must provide an amount of coins or of wood")
             if (coins > userDB.coins) return ctx.errorMessage(`You don't have enought to give this amount of coins.`)
             if (wood > userDB.wood) return ctx.errorMessage(`You don't have enought to give this amount of wood.`)
@@ -40,7 +41,7 @@ class Help extends Command {
             if (wood) clan.ressources = { wood: clan.ressources.wood + wood }, userDB.wood = userDB.wood - wood
             clan.save()
             userDB.save()
-            return ctx.successMessage(`You succesfully transfered ${coins ? `**${coins} <:gold_bag:929356637154717697>**`: ""} ${coins && wood ? "and" :""} ${wood ? `**${wood} <:wood:929664990066114570>**`: ""} to [${clan.clanName}](https://allego.me/clan/${clan.clanID})`)
+            return ctx.successMessage(`You succesfully transfered ${coins ? `**${coins} <:coins:935949762690179133>**`: ""} ${coins && wood ? "and" :""} ${wood ? `**${wood} <:wood:938500833316847738>**`: ""} to [${clan.clanName}](https://allegoria.me/clan/${clan.clanID})`)
 
     }
 }

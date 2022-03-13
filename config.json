@@ -1,12 +1,10 @@
 {
     "bot": {
-        "token": "OTAxNDY2OTIyODIwOTg4OTY4.YXQSfg.rzvbrR5gNEYMYkmE-FpMG2WActA",
-        "ownersIDs": ["772850214318768138", "688402229245509844"]
+        "token": "",
+        "ownersIDs": ["688402229245509844"]
     },
-    "mainLang": "fr",
-    "testGuild": "782661233622515772",
     "database": {
-        "mongoURL": "mongodb+srv://pauldb09:jamesb001@daltie.ifwuu.mongodb.net/daltie?retryWrites=true&w=majority",
+        "mongoURL": "",
         "options": {
             "useNewUrlParser": true,
             "useUnifiedTopology": true,

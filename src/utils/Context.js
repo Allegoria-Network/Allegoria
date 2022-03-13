@@ -75,11 +75,13 @@ class Context {
             default:
                 console.log(`Sorry, we are out of ${expr}.`);
         }
+        console.log(`Final ${Math.floor(finalAmout)},pay: ${pay}`)
         if (userDB.bonuses && userDB.bonuses.daily) {
             this.client.logger.info(`Bonus of ${userDB.bonuses.daily}`)
-            const percentage = 100 + userDB.bonuses.daily
+            const percentage = parseInt(100 + parseInt(userDB.bonuses.daily))
             this.client.logger.info(`Percentage of ${percentage}`)
-            finalAmout = Number(finalAmout + rest)
+            console.log(`${finalAmout * percentage}`)
+            finalAmout = Number(parseInt(finalAmout * percentage))
         }
         console.log(`Final ${Math.floor(finalAmout)},pay: ${pay}`)
         return { number: Math.floor(finalAmout), sign: sign }
@@ -88,7 +90,7 @@ class Context {
     errorMessage(msg) {
         return this.interaction.reply({
             embeds: [{
-                description: "<:reject:929356899336486942> " + msg,
+                description: "<:error:938500833258143774> " + msg,
                 color: "#C73829",
             }]
         })
@@ -105,7 +107,7 @@ class Context {
     successMessage(msg) {
         return this.interaction.reply({
             embeds: [{
-                description: "<:check:929356859184402455> " + msg,
+                description: "<:success:938500833421697074> " + msg,
                 color: "#2ED457",
             }]
         })

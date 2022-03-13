@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'own-shop',
-            category: '<:profile:929660871477706752> Profile',
+            category: '<:profile:938508980177731604> Profile',
             description: 'Displays your/ another user shop\'s',
             options: [{
                 type: "USER",
@@ -30,9 +30,9 @@ class Help extends Command {
             ctx.reply({
                         embeds: [{
                                     color: "#efaa66",
-                                    author: { name: "Global Shop", icon_url: ctx.client.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
+                                    author: { name: "Global Shop", icon_url: ctx.client.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
                                     description: `You can see there the list of the items you can buy. You can buy an item by using \`/buy-item <id>\``,
-                                    fields: [{ name: "► Swords", value: `${data.swords.map(x=>`\`${x.name}\` - ${x.price_gold ? `${x.price_gold} <:gold_bag:929356637154717697>`:""} ${x.price_wood ? `${x.price_wood} <:wood:929664990066114570>`:""}`).join("\n")}` }],
+                                    fields: [{ name: "► Swords", value: `${data.swords.map(x=>`\`${x.name}\` - ${x.price_gold ? `${x.price_gold} <:coins:935949762690179133>`:""} ${x.price_wood ? `${x.price_wood} <:wood:938500833316847738>`:""}`).join("\n")}` }],
 
             }]
         })

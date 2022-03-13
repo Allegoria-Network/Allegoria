@@ -26,11 +26,11 @@ class CommandService {
                 interaction.reply({
                     embeds: [{
                         color: "#efaa66",
-                        author: { name: "Please accept the rules to proceed", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
-                        description: "Hello! you need to accept my [rules](https://allegoria-bot.app/rules) and create a profile to interact with me!\nClick on the button to proceed",
+                        author: { name: "Please accept the rules to proceed", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
+                        description: "Hello! you need to accept my [rules](https://allegoria.me/rules) and create a profile to interact with me!\nClick on the button to proceed",
                     }],
                     components: [{
-                        components: [{ customId: "proceed_button", emoji: "<:check:847244236277678080>", label: "Accept & Proceed", style: 3, type: "BUTTON" }],
+                        components: [{ customId: "proceed_button", emoji: "<:success:938500833421697074>", label: "Accept & Proceed", style: 3, type: "BUTTON" }],
                         type: 'ACTION_ROW'
                     }, ]
                 })
@@ -41,12 +41,12 @@ class CommandService {
                     message_send.edit({
                         embeds: [{
                             color: "#efaa66",
-                            author: { name: "Some links", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
-                            description: "• [Website](https://allegoria-bot.app)\n• [Discord Server](https://discord.gg/6wa4U5sAMe)\n• [Vote](https://allegoria-bot.app/vote)",
+                            author: { name: "Some links", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
+                            description: "• [Website](https://allegoria.me)\n• [Discord Server](https://discord.gg/r8fVHdh5TD)\n• [Vote](https://allegoria.me/vote)",
                         }],
-                        content: `You have accepted our rules successfuly and created your account!\nHello! **${interaction.user.username}** I am **<:mineria:929416897311694858> Mineria** and I will help you during your adventure! You're now able to interaction with thousands of people!\n\n__Guide__\n• You can use \`/setup-profile\` to customize your profile.\n• Check our [Starter guide](https://guide.allegoria.me) to learn how to use the bot\n• Feel free to come on our official support server to get more help! https://discord.gg/6wa4U5sAMe `,
+                        content: `You have accepted our rules successfuly and created your account!\nHello! **${interaction.user.username}** I am **<:mineria:938500817294590002> Mineria** and I will help you during your adventure! You're now able to interaction with thousands of people!\n\n__Guide__\n• You can use \`/setup-profile\` to customize your profile.\n• Check our [Starter guide](https://guide.allegoria.me) to learn how to use the bot\n• Feel free to come on our official support server to get more help! https://discord.gg/r8fVHdh5TD `,
                         components: [{
-                            components: [{ customId: "proceed_button", emoji: "<:check:847244236277678080>", label: "Accept & Proceed", disabled: true, style: 3, type: "BUTTON" }],
+                            components: [{ customId: "proceed_button", emoji: "<:success:938500833421697074>", label: "Accept & Proceed", disabled: true, style: 3, type: "BUTTON" }],
                             type: 'ACTION_ROW'
                         }, ]
                     })
@@ -59,11 +59,11 @@ class CommandService {
                     message_send.edit({
                         embeds: [{
                             color: "#efaa66",
-                            author: { name: "Times up!", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
+                            author: { name: "Times up!", icon_url: interaction.user.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
                             description: "Please do the command again",
                         }],
                         components: [{
-                            components: [{ customId: "proceed_button", emoji: "<:check:847244236277678080>", label: "Accept & Proceed", disabled: true, style: 3, type: "BUTTON" }],
+                            components: [{ customId: "proceed_button", emoji: "<:success:938500833421697074>", label: "Accept & Proceed", disabled: true, style: 3, type: "BUTTON" }],
                             type: 'ACTION_ROW'
                         }, ]
                     })

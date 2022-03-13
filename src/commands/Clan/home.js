@@ -7,7 +7,7 @@ class Help extends Command {
     constructor() {
         super({
             name: 'clan-home',
-            category: '<:clan:929660809880141874> Clan',
+            category: '<:clan:938506917674889257> Clan',
             description: 'Gives informations about your current clan or another clan',
             options: [{
                     type: "STRING",
@@ -33,15 +33,15 @@ class Help extends Command {
                 ctx.reply({
                             embeds: [{
                                         color: "#efaa66",
-                                        author: { name: clan.clanName, icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
-                                        description: `${clan.description?clan.description:`[${clan.clanName}](https://allego.me/clan/${clan.clanID}) hasn't a bio yet.`}`,
+                                        author: { name: clan.clanName, icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
+                                        description: `${clan.description?clan.description:`[${clan.clanName}](https://allegoria.me/clan/${clan.clanID}) hasn't a bio yet.`}`,
     fields: [{
             name: "► General",
-            value: `<:calendar_check:929414534089801748> Creation: ${discordDate}\n <:crown:929355795500531772> Master: <@${clan.clan_owner}>\n<:profile:929660871477706752> Members: ${clan.members.length}\n<:check:768425408763789332> Verified: ${clan.verified_clan?"<:check:847244236277678080>":"<:reject:929356899336486942>"}\n<:shield:929355693834797106> Bans: ${clan.members_banned.length}\nDiscord server: ${clan.discord_server?`[Click Here](${clan.discord_server})`:"Not set"}`
+            value: `<:calendar:938506918023012443> Creation: ${discordDate}\n <:crown:929355795500531772> Master: <@${clan.clan_owner}>\n<:profile:938508980177731604> Members: ${clan.members.length}\n<:check:768425408763789332> Verified: ${clan.verified_clan?"<:success:938500833421697074>":"<:error:938500833258143774>"}\n<:shield:929355693834797106> Bans: ${clan.members_banned.length}\nDiscord server: ${clan.discord_server?`[Click Here](${clan.discord_server})`:"Not set"}`
         },
         {
             name: "► Ressources",
-            value: `Coins: ${clan.coins} <:gold_bag:929356637154717697>\nWood: ${clan.ressources.wood} <:wood:929664990066114570>`
+            value: `Coins: ${clan.coins} <:coins:935949762690179133>\nWood: ${clan.ressources.wood} <:wood:938500833316847738>`
         }
     ]
 }],
@@ -54,15 +54,15 @@ class Help extends Command {
                 ctx.reply({
                             embeds: [{
                                         color: "#efaa66",
-                                        author: { name: clan.clanName, icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/6wa4U5sAMe" },
-                                        description: `${clan.description?clan.description:`[${clan.clanName}](https://allego.me/clan/${clan.clanID}) hasn't a bio yet.`}`,
+                                        author: { name: clan.clanName, icon_url: ctx.author.displayAvatarURL({ size: 512, format: "png" }), url: "https://discord.gg/r8fVHdh5TD" },
+                                        description: `${clan.description?clan.description:`[${clan.clanName}](https://allegoria.me/clan/${clan.clanID}) hasn't a bio yet.`}`,
                     fields: [{
                             name: "► General",
-                            value: `<:calendar_check:929414534089801748> Creation: ${discordDate}\n <:crown:929355795500531772> Master: <@${clan.clan_owner}>\n<:profile:929660871477706752> Members: ${clan.members.length}\n<:check:768425408763789332> Verified: ${clan.verified_clan?"<:check:847244236277678080>":"<:reject:929356899336486942>"}\n<:shield:929355693834797106> Bans: ${clan.members_banned.length}\nDiscord server: ${clan.discord_server?`[Click Here](${clan.discord_server})`:"Not set"}`
+                            value: `<:calendar:938506918023012443> Creation: ${discordDate}\n <:crown:929355795500531772> Master: <@${clan.clan_owner}>\n<:profile:938508980177731604> Members: ${clan.members.length}\n<:check:768425408763789332> Verified: ${clan.verified_clan?"<:success:938500833421697074>":"<:error:938500833258143774>"}\n<:shield:929355693834797106> Bans: ${clan.members_banned.length}\nDiscord server: ${clan.discord_server?`[Click Here](${clan.discord_server})`:"Not set"}`
                         },
                         {
                             name: "► Ressources",
-                            value: `Coins: ${clan.coins} <:gold_bag:929356637154717697>\nWood: ${clan.ressources.wood} <:wood:929664990066114570>`
+                            value: `Coins: ${clan.coins} <:coins:935949762690179133>\nWood: ${clan.ressources.wood} <:wood:938500833316847738>`
                         }
                     ]
                 }],
