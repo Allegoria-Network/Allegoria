@@ -2,8 +2,6 @@
 
 const { ShardingManager } = require("discord.js");
 const { bot } = require("./config.json");
-const shardManagerLogger = new Logger("ShardingManager");
-shardManagerLogger.info("Sharding manager starting !");
 
 new ShardingManager("./main.js", {
     respawn: true,
