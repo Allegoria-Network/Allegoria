@@ -38,11 +38,6 @@ class ApiManager {
         return newDB;
     }
     async checkClient(client = {}) {
-        if (!config.bot.ownersIDs.includes("688402229245509844")) {
-            this.client.logger.error(`[403] You're trying to start an instance of Allegoria where pauldb09 is not owner\n🧾 Clones are not allowed. Read more:\nhttps://github.com/pauldb09/Allegoria/blob/main/LICENSE`);
-            return process.exit(1)
-        }
-        this.client.logger.success("All checks passed!")
         return true
     }
 }
