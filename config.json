@@ -8,8 +8,6 @@
         "options": {
             "useNewUrlParser": true,
             "useUnifiedTopology": true,
-            "useCreateIndex": true,
-            "useFindAndModify": false,
             "autoIndex": false,
             "maxPoolSize": 90,
             "serverSelectionTimeoutMS": 5000,
