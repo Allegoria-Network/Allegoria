@@ -1,6 +1,7 @@
 # Allegoria
 ⚔ A powerfully RPG bot to play over discord! Games, pets &amp; more!
 
+If you need any help, join <a href="https://discord.gg/Wkbpa4y8JW">this server</a> and i'll help you!
 
  
 **🖥 Installation**
