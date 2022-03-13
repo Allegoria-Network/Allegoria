@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/warix8/discord.js-bot-structure.git"
+        "url": "git+https://github.com/pauldb09/Allegoria/allegoria.git"
     },
-    "author": "Warix",
+    "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/warix8/discord.js-bot-structure/issues"
+        "url": "https://github.com/pauldb09/Allegoria"
     },
-    "homepage": "https://github.com/warix8/discord.js-bot-structure#readme",
+    "homepage": "https://github.com/pauldb09/Allegoria",
     "contributors": [
         "Warix",
         "Ota"
@@ -23,9 +23,15 @@
     "dependencies": {
         "asciiart-logo": "^0.2.6",
         "discord-player": "^5.2.0",
-        "discord.js": "^13.3.1",
-        "humanize-duration": "https://github.com/TamakiBot/Logia-humanize-duration",
+        "discord.js": "^14.0.0-dev.1640865766.780b7ed",
+        "ejs": "3.1",
+        "express": "^4.17.2",
+        "express-session": "^1.17.2",
         "moment": "^2.29.1",
+        "mongoose": "^6.1.5",
+        "morgan": "^1.10.0",
+        "passport": "^0.5.2",
+        "passport-discord": "^0.1.4",
         "play-dl": "^1.5.0"
     }
 }
